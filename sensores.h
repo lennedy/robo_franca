@@ -8,7 +8,8 @@ class sensores: calibracao{
 public:  
   sensores();
   void teste();
-
+  boolean linhaEstaDireita();
+  boolean linhaEstaEsquerda();
 
 };
 

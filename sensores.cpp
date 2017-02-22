@@ -9,4 +9,10 @@ void sensores::teste(){
   lerSensorFimDeCurso();
 }
 
+boolean  sensores::linhaEstaDireita(){
 
+}
+
+boolean  sensores::linhaEstaEsquerda(){
+
+}
