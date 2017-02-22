@@ -4,9 +4,11 @@
 #include "calibracao.h"
 
 class sensores: calibracao{
-  
-  inline void teste(){lerSensorFimDeCurso();}
-  
+
+public:  
+  sensores();
+  void teste();
+
 
 };
 
