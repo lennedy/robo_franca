@@ -5,6 +5,9 @@
 
 class calibracao:protected robo_hardware{
   
+public:
+  calibracao();
+  
 
 };
 
