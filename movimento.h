@@ -4,6 +4,10 @@
 #define MOVIMENTO_H
 
 class movimento:protected robo_hardware{
+  
+  #define ESQUERDA 1
+  #define DIREITA 2
+  #define FRENTE 3
 
 private:
   void noventa_direita();
@@ -18,7 +22,7 @@ public:
   void parar();
   void pegar_bola();
   void soltar_bola();
-  void passar_encruzilhada();
+  void passar_encruzilhada(int encruzilhada);
   
 };
 

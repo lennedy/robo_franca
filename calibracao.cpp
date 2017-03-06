@@ -8,6 +8,11 @@ int calibracao::calcule_media(int valor_maior, int valor_menor){
    int media = (valor_maior + valor_menor)/2;
    return media;
 }
+
+int calibracao::get_encruzilhada(int posicao){
+  return encruzilhada[posicao];
+
+}
   
 float calibracao::get_media_mais_esquerda(){
   return media_mais_esquerda;

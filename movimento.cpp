@@ -2,6 +2,7 @@
 
 
 movimento::movimento(){
+  
 }
 
 void movimento::andar_frente(){
@@ -22,4 +23,12 @@ void movimento::soltar_bola(){
   acionarServo(0);
 }
 
-
+void movimento::passar_encruzilhada(int encruzilhada){
+  if(encruzilhada ==  ESQUERDA){
+    noventa_enquerda();
+  }else if(encruzilhada == DIREITA){
+    noventa_direita();
+  }else{
+    frente_encruzilhada();
+  }
+}
