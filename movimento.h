@@ -1,7 +1,8 @@
-#include "robo_hardware.h"
-
 #ifndef MOVIMENTO_H
 #define MOVIMENTO_H
+
+#include "robo_hardware.h"
+
 
 class movimento:protected robo_hardware{
   

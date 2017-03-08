@@ -1,14 +1,14 @@
-#include "robo_hardware.h"
-
 #ifndef CALIBRACAO_H
 #define CALIBRACAO_H
 
+#include "robo_hardware.h"
+
+
 class calibracao:protected robo_hardware{
-  
-  
 private:
 
-  
+  //int numero_de_encruzilhadas;
+  //int encruzilhada[numero_de_encruzilhadas];
 
   int menor_valor_mais_esquerdo = 0;
   int maior_valor_mais_esquerdo = 0;

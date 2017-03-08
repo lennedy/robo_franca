@@ -1,8 +1,8 @@
 #include <Servo.h>
 //#include "robo_hardware.h"
-//#include "calibracao.h"
+#include "calibracao.h"
 #include "sensores.h"
-//#include "movimento.h"
+#include "movimento.h"
 
 robo_hardware robo;
 
