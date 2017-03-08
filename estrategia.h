@@ -1,10 +1,8 @@
-#include "sensores.h"
-#include "movimento.h"
-
 #ifndef ESTRATEGIA_H
 #define ESTRATEGIA_H
 
-//lennedy
+#include "sensores.h"
+#include "movimento.h"
 
 class estrategia{
 
