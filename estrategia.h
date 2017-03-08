@@ -4,6 +4,7 @@
 #ifndef ESTRATEGIA_H
 #define ESTRATEGIA_H
 
+//lennedy
 
 class estrategia{
 
