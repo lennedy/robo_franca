@@ -6,11 +6,12 @@
 
 class estrategia{
 
-  movimento movimentacao;
+  movimento mover;
   sensores sensor;
 
 public:
   estrategia();
+  void configura();
   void run(); 
   
 };

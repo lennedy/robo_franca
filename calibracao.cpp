@@ -28,6 +28,7 @@ float calibracao::get_media_mais_direita(){
 }
 
 void calibracao::calibra(){
+    configurar();
     media_mais_esquerda = calcule_media(maior_valor_mais_esquerdo, menor_valor_mais_esquerdo);
     media_esquerda = calcule_media(maior_valor_esquerdo, menor_valor_esquerdo);
     media_direita = calcule_media(maior_valor_direito, menor_valor_direito);

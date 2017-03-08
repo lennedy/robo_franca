@@ -1,18 +1,14 @@
 #include <Servo.h>
-//#include "robo_hardware.h"
-#include "calibracao.h"
-#include "sensores.h"
-#include "movimento.h"
+#include "estrategia.h"
 
-robo_hardware robo;
-
-
+estrategia executar;
 
 void setup() {
-  robo.configurar();
-  //Serial.begin(9600);
+  executar.configura();
+   //robo.configurar();
+  Serial.begin(9600);
 }
 
 void loop(){
-   
+  executar.run();
 }

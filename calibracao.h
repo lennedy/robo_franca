@@ -12,16 +12,16 @@ private:
   //int encruzilhada[numero_de_encruzilhadas];
 
   int menor_valor_mais_esquerdo = 0;
-  int maior_valor_mais_esquerdo = 0;
+  int maior_valor_mais_esquerdo = 1000;
 
   int menor_valor_esquerdo = 0;
-  int maior_valor_esquerdo = 0;
+  int maior_valor_esquerdo = 1000;
 
   int menor_valor_direito = 0;
-  int maior_valor_direito = 0;
+  int maior_valor_direito = 1000;
 
   int menor_valor_mais_direito = 0;
-  int maior_valor_mais_direito = 0;
+  int maior_valor_mais_direito = 1000;
 
 protected:
   

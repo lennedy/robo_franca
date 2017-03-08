@@ -6,7 +6,11 @@
 
 
 sensores::sensores(){
+  
+}
 
+void sensores::configura(){
+  calibra();
 }
 
 int sensores::determine_cor(int sensor, float media){
