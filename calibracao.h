@@ -3,6 +3,7 @@
 
 #include "robo_hardware.h"
 
+//esse vai dar certo.
 
 class calibracao:protected robo_hardware{
 private:
