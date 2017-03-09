@@ -1,3 +1,5 @@
+#include <SPI.h>
+#include <MFRC522.h>
 //nesse arquivo as funcoes devem ser somente declaradas
 #ifndef ROBO_HARDWARE_H
 #define ROBO_HARDWARE_H
@@ -26,6 +28,9 @@ public:
   #define sensor_esquerdo A7
   #define sensor_direito A8
   #define sensor_mais_direito A9
+  
+  #define SS_PIN 53
+  #define RST_PIN 3
 
   robo_hardware();
   void configurar();
@@ -33,9 +38,13 @@ public:
   float lerSensorDeLinha(int sensor);
   void lerXbee();
   void acionarMotores(float motor1, float motor2);
-  void acionarServo(float angulo);   
+  void acionarServo(float angulo); 
+  boolean lerTag(); 
+  
 
 private:
+  Servo servo;
+  MFRC522 leituraTag;
   void tensao(float valor_por_cento,int pino);
   
   

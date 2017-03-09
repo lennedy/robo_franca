@@ -1,12 +1,9 @@
 #include "robo_hardware.h"
 #include <math.h>
 
-Servo servo;
 
-
-
-robo_hardware::robo_hardware(){
-
+robo_hardware::robo_hardware():leituraTag(SS_PIN, RST_PIN){
+  //leituraTag(SS_PIN, RST_PIN);
 }
 
 void robo_hardware::tensao(float valor_por_cento,int pino){
@@ -73,4 +70,10 @@ void robo_hardware::acionarMotores(float motor1, float motor2){
 
 void robo_hardware::acionarServo(float angulo){
   servo.write(angulo);
+}
+
+boolean robo_hardware::lerTag(){
+  if(leituraTag.PICC_IsNewCardPresent()){
+    return true;
+  }
 }

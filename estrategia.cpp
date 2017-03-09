@@ -9,8 +9,11 @@ void estrategia::configura(){
   sensor.configura();
 }
 void estrategia::run(){
-  
-  if(sensor.branco_branco_branco_branco()){
+  if(sensor.rfid_presente()){
+    while(1){
+      mover.parar();
+    }
+  }else if(sensor.branco_branco_branco_branco()){
     mover.andar_frente();
   }else if(sensor.branco_preto_branco_branco()  ||  sensor.preto_branco_branco_branco()){
     mover.enrolar_esquerda();

@@ -10,6 +10,7 @@ class sensores:calibracao{
 public:  
   sensores();
   void configura();
+  boolean rfid_presente();
   boolean branco_branco_branco_branco();// 1 de 12 - estado: ir para frente
   boolean branco_preto_branco_branco();//2 de 12 - estado: enrolar_esquerda
   boolean branco_branco_preto_branco();//3 de 12 - estado: enrolar_direita

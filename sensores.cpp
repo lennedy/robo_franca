@@ -160,3 +160,6 @@ boolean sensores::preto_preto_preto_preto(){
   );
 }
 
+boolean sensores::rfid_presente(){
+  return lerTag();
+}
