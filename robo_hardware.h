@@ -24,10 +24,10 @@ public:
   #define SERVO 1
   #define BOTAO 2
 
-  #define sensor_mais_esquerdo A6
-  #define sensor_esquerdo A7
-  #define sensor_direito A8
-  #define sensor_mais_direito A9
+  #define sensor_mais_esquerdo A3
+  #define sensor_esquerdo A2
+  #define sensor_direito A1
+  #define sensor_mais_direito A0
   
   #define SS_PIN 53
   #define RST_PIN 3

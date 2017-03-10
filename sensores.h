@@ -26,7 +26,7 @@ public:
   
   
 private:  
-  int determine_cor(int sensor, float media);
+  int determine_cor(int sensor, float media, boolean preto_maior_branco);
 
 };
 
