@@ -6,13 +6,13 @@ movimento::movimento(){
 }
 
 void movimento::andar_frente(){
-  acionarMotores(25,25);
+  acionarMotores(40,40);
 }
 void movimento::enrolar_esquerda(){
-  acionarMotores(-10,30);
+  acionarMotores(-40,40);
 }
 void movimento::enrolar_direita(){
-  acionarMotores(30,-10);
+  acionarMotores(40,-40);
 }
 void movimento::parar(){
   acionarMotores(0,0);

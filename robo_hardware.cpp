@@ -24,12 +24,14 @@ void robo_hardware::configurar(){
   pinMode(3, OUTPUT);  
   digitalWrite(3, HIGH);
 */
+  SPI.begin(); 
+  leituraTag.PCD_Init();
   pinMode(4, OUTPUT); 
   pinMode(7, OUTPUT); 
   pinMode(8, OUTPUT); 
   pinMode(9, OUTPUT);
 
-  pinMode(BOTAO, INPUT);
+  //pinMode(BOTAO, INPUT);
 }
 
 boolean robo_hardware::lerSensorFimDeCurso(){
@@ -45,27 +47,26 @@ void robo_hardware::lerXbee(){
 }
 
 void robo_hardware::acionarMotores(float motor1, float motor2){
-  if( motor1 < 0 ){
-       //7 faz lado motor A1 B1 andar no sentido horario e o 8 andar no sentido antihorario
-       digitalWrite(SENTIDO_HORARIO_RODA_ESQUERDA, HIGH);
-       digitalWrite(SENTIDO_ANTIHORARIO_RODA_ESQUERDA, LOW);
-    }else{
-      digitalWrite(SENTIDO_ANTIHORARIO_RODA_ESQUERDA, HIGH);
-      digitalWrite(SENTIDO_HORARIO_RODA_ESQUERDA, LOW);
-      
-    }
-    tensao(motor1,RODA_ESQUERDA);
   
+  if(motor1 < 0){
+    digitalWrite(SENTIDO_ANTIHORARIO_RODA_ESQUERDA, false);
+    tensao(motor1,PWM_RODA_ESQUERDA);  
+  }else{
+    digitalWrite(SENTIDO_ANTIHORARIO_RODA_ESQUERDA, true);
+    motor1 = motor1 - 255;
+    tensao(motor1,PWM_RODA_ESQUERDA);  
+  }
   
-    if(motor2 < 0){
-      //4 faz lado motor A2 B2 andar no sentido horario e o 9 andar no sentido antihorario
-       digitalWrite(SENTIDO_ANTIHORARIO_RODA_DIRETA, HIGH);
-       digitalWrite(SENTIDO_HORARIO_RODA_DIREITA, LOW);    
-    }else{
-       digitalWrite(SENTIDO_HORARIO_RODA_DIREITA, HIGH);
-       digitalWrite(SENTIDO_ANTIHORARIO_RODA_DIRETA, LOW);
-    }
-    tensao(motor2, RODA_DIREITA);
+  if(motor2 < 0){
+    digitalWrite(SENTIDO_ANTIHORARIO_RODA_DIREITA, false);
+    tensao(motor2,PWM_RODA_DIREITA);  
+  }else{
+    digitalWrite(SENTIDO_ANTIHORARIO_RODA_DIREITA, true);
+    motor2 = motor2 - 255;
+    tensao(motor2,PWM_RODA_DIREITA);  
+  }
+    
+    
 }
 
 void robo_hardware::acionarServo(float angulo){
@@ -73,7 +74,7 @@ void robo_hardware::acionarServo(float angulo){
 }
 
 boolean robo_hardware::lerTag(){
-  if(leituraTag.PICC_IsNewCardPresent()){
+  if(leituraTag.PICC_IsNewCardPresent() && leituraTag.PICC_ReadCardSerial()){
     return true;
   }
 }

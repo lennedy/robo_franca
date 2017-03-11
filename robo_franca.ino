@@ -10,15 +10,19 @@ estrategia executar;
 
 void setup() {
   executar.configura();
-   robo.configurar();
+  //robo.configurar();
   Serial.begin(9600);
 }
 
 int x = 0;
 
 void loop(){
-  //executar.run();
-  x = robo.lerSensorDeLinha(sensor_mais_direito);
+  //robo.acionarMotores(50,50);
+  executar.run();
+  /*x = robo.lerSensorDeLinha(sensor_esquerdo);
   Serial.println(x);
   delay(500);
+  */
+ 
+
 }
