@@ -47,7 +47,7 @@ void robo_hardware::lerXbee(){
 }
 
 void robo_hardware::acionarMotores(float motor1, float motor2){
-  
+  motor1 = motor1*AJUSTE_MOTOR;
   if(motor1 < 0){
     digitalWrite(SENTIDO_ANTIHORARIO_RODA_ESQUERDA, false);
     tensao(motor1,PWM_RODA_ESQUERDA);  

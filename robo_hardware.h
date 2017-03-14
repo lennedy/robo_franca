@@ -1,5 +1,5 @@
 #include <SPI.h>
-#include <MFRC522.h>
+#include "MFRC522.h"
 //nesse arquivo as funcoes devem ser somente declaradas
 #ifndef ROBO_HARDWARE_H
 #define ROBO_HARDWARE_H
@@ -12,6 +12,8 @@
 
 
 class robo_hardware{
+private:
+  #define AJUSTE_MOTOR 0.65
 public: 
   #define PWM_RODA_ESQUERDA 5
   #define SENTIDO_ANTIHORARIO_RODA_ESQUERDA 7
