@@ -1,4 +1,4 @@
-#include <MFRC522.h>
+//#include <MFRC522.h>
 #include <SPI.h>
 
 #include <Servo.h>
@@ -11,7 +11,8 @@ estrategia executar;
 void setup() {
   executar.configura();
   //robo.configurar();
-  Serial.begin(9600);
+  //Serial.begin(9600);
+  executar.iniciar_menu();
 }
 
 int x = 0;
