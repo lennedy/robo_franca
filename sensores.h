@@ -23,6 +23,7 @@ public:
   boolean preto_preto_preto_branco();//10 de 12 - estado: encruzilhada(sem certeza)
   boolean branco_preto_preto_preto();//11 de 12 - estado: encruzilhada(sem certeza)
   boolean preto_preto_preto_preto();//12 de 12 - estado: encruzilhada
+  inline void calibrar(){inicializar_valores();}
   
   
 private:  
