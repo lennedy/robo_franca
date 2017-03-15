@@ -15,7 +15,6 @@ public:
   estrategia();
   void configura();
   void run(); 
-  void calibrar();
   inline void iniciar_menu(){m.executar();}
   
 };

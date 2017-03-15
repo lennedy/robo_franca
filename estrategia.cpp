@@ -22,7 +22,3 @@ void estrategia::run(){
   
 
 }
-
-void estrategia::calibrar(){
-  sensor.calibrar();  
-}
