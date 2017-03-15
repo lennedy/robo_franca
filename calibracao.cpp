@@ -29,8 +29,21 @@ float calibracao::get_media_mais_direita(){
 
 void calibracao::calibra(){
     configurar();
+    
     media_mais_esquerda = calcule_media(maior_valor_mais_esquerdo, menor_valor_mais_esquerdo);
     media_esquerda = calcule_media(maior_valor_esquerdo, menor_valor_esquerdo);
     media_direita = calcule_media(maior_valor_direito, menor_valor_direito);
     media_mais_direita = calcule_media(maior_valor_mais_direito, menor_valor_mais_direito);
+}
+
+void calibracao::inicializar_valores(){
+  int valor_sensor = lerSensorDeLinha(sensor_direito);
+  if(valor_sensor < menor_valor_direito){
+    menor_valor_direito = valor_sensor;
+  }
+  Serial.println("Valor sensor:");
+  Serial.println(valor_sensor);
+  Serial.println("Valor menor:");
+  Serial.println(menor_valor_direito);
+  
 }

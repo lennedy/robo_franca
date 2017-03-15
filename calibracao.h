@@ -11,17 +11,17 @@ private:
   //int numero_de_encruzilhadas;
   //int encruzilhada[numero_de_encruzilhadas];
 
-  int menor_valor_mais_esquerdo = 38;
-  int maior_valor_mais_esquerdo = 411;
+  int menor_valor_mais_esquerdo = 73;
+  int maior_valor_mais_esquerdo = 436;
 
-  int menor_valor_esquerdo = 33;
-  int maior_valor_esquerdo = 413;
+  int menor_valor_esquerdo = 68;
+  int maior_valor_esquerdo = 469;
 
-  int menor_valor_direito = 34;
-  int maior_valor_direito = 522;
+  int menor_valor_direito = 73;
+  int maior_valor_direito = 494;
 
-  int menor_valor_mais_direito = 39;
-  int maior_valor_mais_direito = 604;
+  int menor_valor_mais_direito = 82;
+  int maior_valor_mais_direito = 507;
 
 protected:
   
@@ -48,5 +48,6 @@ public:
   float get_media_direita();
   float get_media_mais_direita();
   void calibra();
+  void inicializar_valores();
 };
 #endif
