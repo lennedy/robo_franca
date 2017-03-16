@@ -1,6 +1,6 @@
 #include "estrategia.h"
 
-estrategia::estrategia():m(sensor){
+estrategia::estrategia(){
   
 }
 

@@ -13,6 +13,7 @@ void setup() {
   //robo.configurar();
   //Serial.begin(9600);
   executar.iniciar_menu();
+  
 }
 
 int x = 0;

@@ -6,12 +6,14 @@
 
 class menu{
  private:
-   sensores* s;
+   sensores s;
  public:
-  menu(sensores& s);
+  menu();
   void executar();
   char lerSerial();
   void print_escolha_de_sensores();
+  sensores get_sensores(){return s;}
+  void espaco();
 
 };
 

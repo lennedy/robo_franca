@@ -15,7 +15,7 @@ public:
   estrategia();
   void configura();
   void run(); 
-  inline void iniciar_menu(){m.executar();}
+  inline void iniciar_menu(){m.executar(); sensor = m.get_sensores();}
   
 };
 

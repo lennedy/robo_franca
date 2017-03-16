@@ -1,7 +1,13 @@
 #include "menu.h"
 
-menu::menu(sensores& s){
-  this->s=&s;
+menu::menu(){
+}
+
+void menu::espaco(){
+  Serial.println("********************************");
+  Serial.println();
+  Serial.println();
+  Serial.println("********************************");
 }
 
 char menu::lerSerial(){
@@ -11,9 +17,10 @@ char menu::lerSerial(){
 
 void menu::print_escolha_de_sensores(){
   Serial.println("Qual sensor deseja?");
-  Serial.println("1 - todos os brancos / 2 - todos os pretos");
-  Serial.println("3 - branco esquerdo / 4 - branco direito / 5 - preto esquerdo / 6 - preto direito");
-  Serial.println("3 - branco esquerdo / 4 - branco direito / 5 - preto esquerdo / 6 - preto direito");
+  Serial.println("q - todos os brancos");
+  Serial.println("w - preto mais esquerdo / e - preto esquerdo / r - preto direito / t - preto mais direito");
+  Serial.println("v - voltar");
+  espaco();
 }
 
 void menu::executar(){
@@ -23,8 +30,37 @@ void menu::executar(){
     escolha = lerSerial();
     if(escolha == 'c'){
       //chamar funcao de escolha
-      print_escolha_de_sensores();
-      s->calibrar();
+      while(1){
+        print_escolha_de_sensores();
+        char escolha2 = 'n';
+        escolha2 = lerSerial();
+        if(escolha2 == 'q'){
+          s.inicializar_valores_brancos();
+          Serial.println("Calibrado todos os brancos!");
+          espaco();
+        } else if(escolha2 == 'w'){
+          s.inicializar_preto_mais_esquerdo();
+          Serial.println("Calibrado preto mais esquerdo!");
+          espaco();
+        } else if(escolha2 == 'e'){
+          s.inicializar_preto_esquerdo();
+          Serial.println("Calibrado preto esquerdo!");
+          espaco();
+        } else if(escolha2 == 'r'){
+          s.inicializar_preto_direito();
+          Serial.println("Calibrado preto direito!");
+          espaco();
+        } else if(escolha2 == 't'){
+          s.inicializar_preto_mais_direito();
+          Serial.println("Calibrado preto mais direito!");
+          espaco();
+        } else if(escolha2 == 'v'){
+          break;
+        } else {
+          Serial.println("Nao existe essa opcao!!");
+          espaco();
+        }
+      }
     } else if(escolha == 'i'){
       //executar cod
       break;
