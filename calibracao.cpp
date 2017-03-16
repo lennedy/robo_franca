@@ -35,23 +35,23 @@ void calibracao::calibra(){
     media_mais_direita = calcule_media(maior_valor_mais_direito, menor_valor_mais_direito);
 }
 
-void calibracao::inicializar_valores(){
+void calibracao::inicializar_valores_brancos(){
   int valor_sensor = robo.lerSensorDeLinha(sensor_direito);
   if(valor_sensor < menor_valor_direito){
     menor_valor_direito = valor_sensor;
   }
   
-  int s_esquerdo = lerSensorDeLinha(sensor_esquerdo);
+  int s_esquerdo = robo.lerSensorDeLinha(sensor_esquerdo);
   if(s_esquerdo < menor_valor_esquerdo){
     menor_valor_esquerdo = s_esquerdo;
   }
   
-  int s_direito = lerSensorDeLinha(sensor_direito);
+  int s_direito = robo.lerSensorDeLinha(sensor_direito);
   if(s_direito < menor_valor_direito){
     menor_valor_direito = s_direito;
   }
   
-  int s_mais_direito = lerSensorDeLinha(sensor_mais_direito);
+  int s_mais_direito = robo.lerSensorDeLinha(sensor_mais_direito);
   if(s_mais_direito < menor_valor_mais_direito){
     menor_valor_mais_direito = s_mais_direito;
   }
@@ -64,28 +64,28 @@ void calibracao::inicializar_valores(){
 }
 
 void calibracao::inicializar_preto_mais_esquerdo(){
-  int mais_esquerdo_s = lerSensorDeLinha(sensor_mais_esquerdo);
+  int mais_esquerdo_s = robo.lerSensorDeLinha(sensor_mais_esquerdo);
   if(mais_esquerdo_s > maior_valor_mais_esquerdo){
     maior_valor_mais_esquerdo = mais_esquerdo_s;
   }
 }
 
 void calibracao::inicializar_preto_esquerdo(){
-  int esquerdo_s = lerSensorDeLinha(sensor_esquerdo);
+  int esquerdo_s = robo.lerSensorDeLinha(sensor_esquerdo);
   if(esquerdo_s > maior_valor_esquerdo){
     maior_valor_esquerdo = esquerdo_s;
   }
 }
 
 void calibracao::inicializar_preto_direito(){
-  int direito_s = lerSensorDeLinha(sensor_direito);
+  int direito_s = robo.lerSensorDeLinha(sensor_direito);
   if(direito_s > maior_valor_direito){
     maior_valor_direito = direito_s;
   }
 }
 
 void calibracao::inicializar_preto_mais_direito(){
-  int mais_direito_s = lerSensorDeLinha(sensor_mais_direito);
+  int mais_direito_s = robo.lerSensorDeLinha(sensor_mais_direito);
   if(mais_direito_s > maior_valor_mais_direito){
     maior_valor_mais_direito = mais_direito_s;
   }

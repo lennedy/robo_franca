@@ -9,28 +9,24 @@ void estrategia::configura(){
   robo.configurar();
 }
 void estrategia::run(){
-  serial = Serial.read();/*
+  serial = Serial.read();
   if(serial != 0){
     mover.passar_encruzilhada(serial);
-    if(serial == 'u'){*/
-      mover.palito_frente();
-      delay(1000);
-      mover.palito_esquerda();
-      delay(1000);
+    if(serial == 'u'){
+      robo.acionarServo(85);
       
-      /*
     }else if(serial == 'y'){
-      mover.palito_esquerda();
+      robo.acionarServo(170);
       
     }else if(serial =='i'){
-      mover.palito_direita();
+      robo.acionarServo(0);
       
     }
     
     serial = 0;
-   */ 
-  //}else{
-    /*if(sensor.rfid_presente()){
+    
+  }/*else{
+    if(sensor.rfid_presente()){
       mover.parar();
     }else if(sensor.branco_branco_branco_branco()){
       mover.andar_frente();
@@ -40,11 +36,8 @@ void estrategia::run(){
       mover.enrolar_direita();  
     }else{
       mover.andar_frente();
-    }*/
-  //} 
-  
-}
-  }
-  
+    }
+  } */
+    
 
 }
