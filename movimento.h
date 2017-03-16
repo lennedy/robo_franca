@@ -4,7 +4,7 @@
 #include "robo_hardware.h"
 
 
-class movimento:protected robo_hardware{
+class movimento{
   
   #define ESQUERDA 'a'
   #define DIREITA 'd'
@@ -27,7 +27,6 @@ public:
   void pegar_bola();
   void soltar_bola();
   void passar_encruzilhada(char encruzilhada);
-  inline void confi(){configurar();}
   
 };
 

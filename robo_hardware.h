@@ -51,4 +51,6 @@ private:
 
 };
 
+static robo_hardware robo;
+
 #endif

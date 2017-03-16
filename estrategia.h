@@ -10,8 +10,8 @@ private:
   char serial = 0;
   
   movimento mover;
-//  sensores sensor;
-//  menu  m;
+  sensores sensor;
+  menu  m;
 
 public:
   estrategia();
@@ -21,7 +21,5 @@ public:
   inline void iniciar_menu(){}//m.executar();}
   
 };
-
-
 
 #endif

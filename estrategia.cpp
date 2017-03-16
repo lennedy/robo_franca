@@ -1,12 +1,11 @@
 #include "estrategia.h"
 
-estrategia::estrategia(){//:m(sensor){
-  
+estrategia::estrategia():m(sensor){
 }
 
 void estrategia::configura(){
-  ///sensor.configura();
-  mover.confi();
+  sensor.configura();
+  robo.configurar();
 }
 void estrategia::run(){
   serial = Serial.read();/*

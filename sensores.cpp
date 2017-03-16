@@ -14,7 +14,7 @@ void sensores::configura(){
 }
 
 int sensores::determine_cor(int sensor, float media, boolean preto_maior_branco){
-  int luz = lerSensorDeLinha(sensor);
+  int luz = robo.lerSensorDeLinha(sensor);
   int cor = 0;
   
   if(preto_maior_branco){
@@ -161,5 +161,5 @@ boolean sensores::preto_preto_preto_preto(){
 }
 
 boolean sensores::rfid_presente(){
-  return lerTag();
+  return robo.lerTag();
 }

@@ -5,7 +5,7 @@
 
 //esse vai dar certo.
 
-class calibracao:protected robo_hardware{
+class calibracao{
 private:
 
   //int numero_de_encruzilhadas;
