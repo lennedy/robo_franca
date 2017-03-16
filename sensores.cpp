@@ -163,3 +163,12 @@ boolean sensores::preto_preto_preto_preto(){
 boolean sensores::rfid_presente(){
   return robo.lerTag();
 }
+
+void sensores::calibrar(){
+  inicializar_valores_brancos();
+  inicializar_valores_brancos();
+  inicializar_preto_mais_esquerdo();
+  inicializar_preto_esquerdo();
+  inicializar_preto_direito();
+  inicializar_preto_mais_direito();
+}

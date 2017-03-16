@@ -1,6 +1,7 @@
 #include "estrategia.h"
 
-estrategia::estrategia():m(sensor){
+estrategia::estrategia(){
+  
 }
 
 void estrategia::configura(){
@@ -43,7 +44,7 @@ void estrategia::run(){
   //} 
   
 }
+  }
+  
 
-void estrategia::calibrar(){
- // sensor.calibrar();  
 }

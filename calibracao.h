@@ -48,6 +48,10 @@ public:
   float get_media_direita();
   float get_media_mais_direita();
   void calibra();
-  void inicializar_valores();
+  void inicializar_valores_brancos();
+  void inicializar_preto_mais_esquerdo();
+  void inicializar_preto_esquerdo();
+  void inicializar_preto_direito();
+  void inicializar_preto_mais_direito();
 };
 #endif
