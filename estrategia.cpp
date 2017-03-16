@@ -9,6 +9,11 @@ void estrategia::configura(){
   robo.configurar();
 }
 void estrategia::run(){
+  mover.palito_frente();
+  delay(1000);
+  mover.palito_esquerda();
+  delay(1000);
+  /*
   serial = Serial.read();
   if(serial != 0){
     mover.passar_encruzilhada(serial);
@@ -25,7 +30,9 @@ void estrategia::run(){
     
     serial = 0;
     
-  }/*else{
+  }
+  */
+  /*else{
     if(sensor.rfid_presente()){
       mover.parar();
     }else if(sensor.branco_branco_branco_branco()){

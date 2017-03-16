@@ -21,7 +21,7 @@ public:
   #define PWM_RODA_DIREITA 6
   #define SENTIDO_ANTIHORARIO_RODA_DIREITA 8
   
-  #define SERVO 11
+  #define SERVO 10
   #define BOTAO 2
 
   #define sensor_mais_esquerdo A3
@@ -43,7 +43,7 @@ public:
   
 
 private:
-  Servo servo;
+  static Servo servo;
   MFRC522 leituraTag;
   void tensao(float valor_por_cento,int pino);
   

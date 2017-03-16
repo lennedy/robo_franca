@@ -1,6 +1,7 @@
 #include "robo_hardware.h"
 #include <math.h>
 
+Servo robo_hardware::servo;
 
 robo_hardware::robo_hardware():leituraTag(SS_PIN, RST_PIN){
   //leituraTag(SS_PIN, RST_PIN);
