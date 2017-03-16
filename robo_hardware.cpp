@@ -4,6 +4,7 @@
 
 robo_hardware::robo_hardware():leituraTag(SS_PIN, RST_PIN){
   //leituraTag(SS_PIN, RST_PIN);
+
 }
 
 void robo_hardware::tensao(float valor_por_cento,int pino){
@@ -13,10 +14,10 @@ void robo_hardware::tensao(float valor_por_cento,int pino){
 }
 
 void robo_hardware::configurar(){
-  
   Serial.begin(9600);
   
   servo.attach(SERVO);
+  
 /* 
   pinMode(2, OUTPUT);  
   digitalWrite(2, HIGH);

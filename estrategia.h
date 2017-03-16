@@ -6,17 +6,19 @@
 #include "menu.h"
 
 class estrategia{
-
+private:
+  char serial = 0;
+  
   movimento mover;
-  sensores sensor;
-  menu  m;
+//  sensores sensor;
+//  menu  m;
 
 public:
   estrategia();
   void configura();
   void run(); 
   void calibrar();
-  inline void iniciar_menu(){m.executar();}
+  inline void iniciar_menu(){}//m.executar();}
   
 };
 

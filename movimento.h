@@ -6,24 +6,28 @@
 
 class movimento:protected robo_hardware{
   
-  #define ESQUERDA 1
-  #define DIREITA 2
-  #define FRENTE 3
+  #define ESQUERDA 'a'
+  #define DIREITA 'd'
+  #define FRENTE 'w'
 
 private:
   void noventa_direita();
-  void noventa_enquerda();
+  void noventa_esquerda();
   void frente_encruzilhada();
   
 public:
   movimento();
+  void palito_frente();
+  void palito_esquerda();
+  void palito_direita();
   void andar_frente();
   void enrolar_esquerda();
   void enrolar_direita();
   void parar();
   void pegar_bola();
   void soltar_bola();
-  void passar_encruzilhada(int encruzilhada);
+  void passar_encruzilhada(char encruzilhada);
+  inline void confi(){configurar();}
   
 };
 

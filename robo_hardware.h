@@ -21,7 +21,7 @@ public:
   #define PWM_RODA_DIREITA 6
   #define SENTIDO_ANTIHORARIO_RODA_DIREITA 8
   
-  #define SERVO 1
+  #define SERVO 11
   #define BOTAO 2
 
   #define sensor_mais_esquerdo A3
