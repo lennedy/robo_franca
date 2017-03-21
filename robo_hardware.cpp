@@ -1,7 +1,9 @@
 #include "robo_hardware.h"
 #include <math.h>
 
-Servo robo_hardware::servo;
+Servo robo_hardware::servo_palito;
+Servo robo_hardware::servo_cacamba;
+
 
 robo_hardware::robo_hardware():leituraTag(SS_PIN, RST_PIN){
   //leituraTag(SS_PIN, RST_PIN);
@@ -17,8 +19,8 @@ void robo_hardware::tensao(float valor_por_cento,int pino){
 void robo_hardware::configurar(){
   Serial.begin(9600);
   
-  servo.attach(SERVO);
-  
+  servo_palito.attach(SERVO_PALITO);
+  servo_cacamba.attach(SERVO_CACAMBA);
 /* 
   pinMode(2, OUTPUT);  
   digitalWrite(2, HIGH);
@@ -71,8 +73,12 @@ void robo_hardware::acionarMotores(float motor1, float motor2){
     
 }
 
-void robo_hardware::acionarServo(float angulo){
-  servo.write(angulo);
+void robo_hardware::acionarServoPalito(float angulo){
+  servo_palito.write(angulo);
+}
+
+void robo_hardware::acionarServoCacamba(float angulo){
+  servo_cacamba.write(angulo);
 }
 
 boolean robo_hardware::lerTag(){

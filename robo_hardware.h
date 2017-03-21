@@ -15,15 +15,20 @@ class robo_hardware{
 private:
   #define AJUSTE_MOTOR 0.65
 public: 
+  
   #define PWM_RODA_ESQUERDA 5
   #define SENTIDO_ANTIHORARIO_RODA_ESQUERDA 7
   
   #define PWM_RODA_DIREITA 6
   #define SENTIDO_ANTIHORARIO_RODA_DIREITA 8
   
-  #define SERVO 10
+  
+  
+  
+  #define SERVO_PALITO 12
+  #define SERVO_CACAMBA 13
   #define BOTAO 2
-
+  
   #define sensor_mais_esquerdo A3
   #define sensor_esquerdo A2
   #define sensor_direito A1
@@ -38,12 +43,14 @@ public:
   float lerSensorDeLinha(int sensor);
   void lerXbee();
   void acionarMotores(float motor1, float motor2);
-  void acionarServo(float angulo); 
+  void acionarServoPalito(float angulo);
+  void acionarServoCacamba(float angulo); 
   boolean lerTag(); 
   
 
 private:
-  static Servo servo;
+  static Servo servo_palito;
+  static Servo servo_cacamba;
   MFRC522 leituraTag;
   void tensao(float valor_por_cento,int pino);
   

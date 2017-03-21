@@ -20,6 +20,10 @@ public:
   void palito_frente();
   void palito_esquerda();
   void palito_direita();
+  
+  void levantar_cacamba();
+  void deitar_cacamba();
+  
   void andar_frente();
   void enrolar_esquerda();
   void enrolar_direita();
