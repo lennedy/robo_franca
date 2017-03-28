@@ -27,7 +27,7 @@ public:
   
   #define SERVO_PALITO 12
   #define SERVO_CACAMBA 13
-  #define BOTAO 2
+  #define BOTAO 45
   
   #define sensor_mais_esquerdo A3
   #define sensor_esquerdo A2
@@ -40,13 +40,13 @@ public:
   robo_hardware();
   void configurar();
   boolean lerSensorFimDeCurso();
-  float lerSensorDeLinha(int sensor);
+  int lerSensorDeLinha(int sensor);
   void lerXbee();
   void acionarMotores(float motor1, float motor2);
   void acionarServoPalito(float angulo);
   void acionarServoCacamba(float angulo); 
-  boolean lerTag(); 
-  
+  boolean lerTag();
+  void mostrarSensores();
 
 private:
   static Servo servo_palito;

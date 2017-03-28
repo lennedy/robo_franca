@@ -4,6 +4,7 @@
 #include "sensores.h"
 #include <Arduino.h>
 
+
 class menu{
  private:
    sensores s;

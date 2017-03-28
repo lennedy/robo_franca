@@ -1,8 +1,5 @@
 #include "sensores.h"
 
-#define BRANCO 1
-#define PRETO 2
-
 
 
 sensores::sensores(){
@@ -40,10 +37,10 @@ int sensores::determine_cor(int sensor, float media, boolean preto_maior_branco)
 //1 de 12
 boolean sensores::branco_branco_branco_branco(){
   return (
-    determine_cor(sensor_mais_esquerdo,media_mais_esquerda,preto_maior_branco_mais_esquerdo) == BRANCO &&
-    determine_cor(sensor_esquerdo, media_esquerda,preto_maior_branco_esquerdo) == BRANCO &&
-    determine_cor(sensor_direito, media_direita,preto_maior_branco_direito) == BRANCO &&
-    determine_cor(sensor_mais_direito, media_mais_direita,preto_maior_branco_mais_direito) == BRANCO
+    eh_branco_mais_esquerdo() &&
+    eh_branco_esquerdo() &&
+    eh_branco_direito() &&
+    eh_branco_mais_direito()
   );
 
 }
@@ -51,10 +48,10 @@ boolean sensores::branco_branco_branco_branco(){
 //2 de 12
 boolean sensores::branco_preto_branco_branco(){
   return (
-    determine_cor(sensor_mais_esquerdo,media_mais_esquerda,preto_maior_branco_mais_esquerdo) == BRANCO &&
-    determine_cor(sensor_esquerdo, media_esquerda,preto_maior_branco_esquerdo) == PRETO &&
-    determine_cor(sensor_direito, media_direita,preto_maior_branco_direito) == BRANCO &&
-    determine_cor(sensor_mais_direito, media_mais_direita,preto_maior_branco_mais_direito) == BRANCO
+    eh_branco_mais_esquerdo() &&
+    eh_preto_esquerdo() &&
+    eh_branco_direito() &&
+    eh_branco_mais_direito()
   );
 
 }
@@ -62,102 +59,137 @@ boolean sensores::branco_preto_branco_branco(){
 //3 de 12
 boolean sensores::branco_branco_preto_branco(){
   return (
-    determine_cor(sensor_mais_esquerdo,media_mais_esquerda,preto_maior_branco_mais_esquerdo) == BRANCO &&
-    determine_cor(sensor_esquerdo, media_esquerda,preto_maior_branco_esquerdo) == BRANCO &&
-    determine_cor(sensor_direito, media_direita,preto_maior_branco_direito) == PRETO &&
-    determine_cor(sensor_mais_direito, media_mais_direita,preto_maior_branco_mais_direito) == BRANCO
+    eh_branco_mais_esquerdo() &&
+    eh_branco_esquerdo() &&
+    eh_preto_direito() &&
+    eh_branco_mais_direito()
   );
-
 }
 
 //4 de 12
 boolean sensores::preto_branco_branco_branco(){
   return (
-    determine_cor(sensor_mais_esquerdo,media_mais_esquerda,preto_maior_branco_mais_esquerdo) == PRETO &&
-    determine_cor(sensor_esquerdo, media_esquerda,preto_maior_branco_esquerdo) == BRANCO &&
-    determine_cor(sensor_direito, media_direita,preto_maior_branco_direito) == BRANCO &&
-    determine_cor(sensor_mais_direito, media_mais_direita,preto_maior_branco_mais_direito) == BRANCO
+    eh_preto_mais_esquerdo() &&
+    eh_branco_esquerdo() &&
+    eh_branco_direito() &&
+    eh_branco_mais_direito()
   );
-
 }
 
 //5 de 12
 boolean sensores::branco_branco_branco_preto(){
   return (
-    determine_cor(sensor_mais_esquerdo,media_mais_esquerda,preto_maior_branco_mais_esquerdo) == BRANCO &&
-    determine_cor(sensor_esquerdo, media_esquerda,preto_maior_branco_esquerdo) == BRANCO &&
-    determine_cor(sensor_direito, media_direita,preto_maior_branco_direito) == BRANCO &&
-    determine_cor(sensor_mais_direito, media_mais_direita,preto_maior_branco_mais_direito) == PRETO
+    eh_branco_mais_esquerdo() &&
+    eh_branco_esquerdo() &&
+    eh_branco_direito() &&
+    eh_preto_mais_direito()
   );
-
 }
 
 //6 de 12 
 boolean sensores::branco_preto_preto_branco(){
   return (
-    determine_cor(sensor_mais_esquerdo,media_mais_esquerda,preto_maior_branco_mais_esquerdo) == BRANCO &&
-    determine_cor(sensor_esquerdo, media_esquerda,preto_maior_branco_esquerdo) == PRETO &&
-    determine_cor(sensor_direito, media_direita,preto_maior_branco_direito) == PRETO &&
-    determine_cor(sensor_mais_direito, media_mais_direita,preto_maior_branco_mais_direito) == BRANCO
-  
+    eh_branco_mais_esquerdo() &&
+    eh_preto_esquerdo() &&
+    eh_preto_direito() &&
+    eh_branco_mais_direito()
   );
 }
 //7 de 12
 boolean sensores::preto_branco_branco_preto(){
   return (
-    determine_cor(sensor_mais_esquerdo,media_mais_esquerda,preto_maior_branco_mais_esquerdo) == PRETO &&
-    determine_cor(sensor_esquerdo, media_esquerda,preto_maior_branco_esquerdo) == BRANCO &&
-    determine_cor(sensor_direito, media_direita,preto_maior_branco_direito) == BRANCO &&
-    determine_cor(sensor_mais_direito, media_mais_direita,preto_maior_branco_mais_direito) == PRETO
-  
+    eh_preto_mais_esquerdo() &&
+    eh_branco_esquerdo() &&
+    eh_branco_direito() &&
+    eh_preto_mais_direito()
   );
 }
 //8 de 12  
 boolean sensores::preto_branco_preto_branco(){
   return (
-    determine_cor(sensor_mais_esquerdo,media_mais_esquerda,preto_maior_branco_mais_esquerdo) == PRETO &&
-    determine_cor(sensor_esquerdo, media_esquerda,preto_maior_branco_esquerdo) == BRANCO &&
-    determine_cor(sensor_direito, media_direita,preto_maior_branco_direito) == PRETO &&
-    determine_cor(sensor_mais_direito, media_mais_direita,preto_maior_branco_mais_direito) == BRANCO
-  
+    eh_preto_mais_esquerdo() &&
+    eh_branco_esquerdo() &&
+    eh_preto_direito() &&
+    eh_branco_mais_direito()
   );
 }
 //9 de 12
 boolean sensores::branco_preto_branco_preto(){
-  return (    
-    determine_cor(sensor_mais_esquerdo,media_mais_esquerda,preto_maior_branco_mais_esquerdo) == PRETO &&
-    determine_cor(sensor_esquerdo, media_esquerda,preto_maior_branco_esquerdo) == BRANCO &&
-    determine_cor(sensor_direito, media_direita,preto_maior_branco_direito) == BRANCO &&
-    determine_cor(sensor_mais_direito, media_mais_direita,preto_maior_branco_mais_direito) == BRANCO
+  return (
+    eh_branco_mais_esquerdo() &&
+    eh_preto_esquerdo() &&
+    eh_branco_direito() &&
+    eh_preto_mais_direito()
   );
 
 }
 //10 de 12
 boolean sensores::preto_preto_preto_branco(){
   return (
-    determine_cor(sensor_mais_esquerdo,media_mais_esquerda,preto_maior_branco_mais_esquerdo) == PRETO &&
-    determine_cor(sensor_esquerdo, media_esquerda,preto_maior_branco_esquerdo) == PRETO &&
-    determine_cor(sensor_direito, media_direita,preto_maior_branco_direito) == PRETO &&
-    determine_cor(sensor_mais_direito, media_mais_direita,preto_maior_branco_mais_direito) == BRANCO
+    eh_preto_mais_esquerdo() &&
+    eh_preto_esquerdo() &&
+    eh_preto_direito() &&
+    eh_branco_mais_direito()
   );
 }
 //11 de 12
 boolean sensores::branco_preto_preto_preto(){
   return (
-    determine_cor(sensor_mais_esquerdo,media_mais_esquerda,preto_maior_branco_mais_esquerdo) == BRANCO &&
-    determine_cor(sensor_esquerdo, media_esquerda,preto_maior_branco_esquerdo) == PRETO &&
-    determine_cor(sensor_direito, media_direita,preto_maior_branco_direito) == PRETO &&
-    determine_cor(sensor_mais_direito, media_mais_direita,preto_maior_branco_mais_direito) == PRETO
+    eh_branco_mais_esquerdo() &&
+    eh_preto_esquerdo() &&
+    eh_preto_direito() &&
+    eh_preto_mais_direito()
   );
 }
 //12 de 12
 boolean sensores::preto_preto_preto_preto(){
   return (
-    determine_cor(sensor_mais_esquerdo,media_mais_esquerda,preto_maior_branco_mais_esquerdo) == PRETO  &&
-    determine_cor(sensor_esquerdo, media_esquerda,preto_maior_branco_esquerdo) == PRETO &&
-    determine_cor(sensor_direito, media_direita,preto_maior_branco_direito) == PRETO &&
-    determine_cor(sensor_mais_direito, media_mais_direita,preto_maior_branco_mais_direito) == PRETO
+    eh_preto_mais_esquerdo() &&
+    eh_preto_esquerdo() &&
+    eh_preto_direito() &&
+    eh_preto_mais_direito()
   );
+}
+
+boolean sensores::branco_branco_preto_preto(){
+  return (
+    eh_branco_mais_esquerdo() &&
+    eh_branco_esquerdo() &&
+    eh_preto_direito() &&
+    eh_preto_mais_direito()
+  );
+}
+
+boolean sensores::preto_preto_branco_branco(){
+  return (
+    eh_preto_mais_esquerdo() &&
+    eh_preto_esquerdo() &&
+    eh_branco_direito() &&
+    eh_branco_mais_direito()
+  );
+}
+
+boolean sensores::preto_branco_preto_preto(){
+  return (
+    eh_preto_mais_esquerdo() &&
+    eh_branco_esquerdo() &&
+    eh_preto_direito() &&
+    eh_preto_mais_direito()
+  );
+}
+
+
+boolean sensores::preto_preto_branco_preto(){
+  return (
+    eh_preto_mais_esquerdo() &&
+    eh_preto_esquerdo() &&
+    eh_branco_direito() &&
+    eh_preto_mais_direito()
+  );
+}
+
+boolean sensores::fim_de_curso_apertado(){
+  return !robo.lerSensorFimDeCurso();
 }
 
 boolean sensores::rfid_presente(){

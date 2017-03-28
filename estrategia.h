@@ -7,8 +7,6 @@
 
 class estrategia{
 private:
-  char serial =  0;
-  
   #define LUCI_ESQUERDA 'j'
   #define LUCI_FRENTE 'i'
   #define LUCI_DIREITA 'l'
@@ -18,13 +16,24 @@ private:
   #define X_FRENTE 's'
   #define X_DIREITA 'x'
   
+  char serial = 'b';
+  char encruzilhada[9] = {T_ESQUERDA,T_DIREITA,X_FRENTE,X_DIREITA,LUCI_FRENTE,X_DIREITA,X_FRENTE,LUCI_FRENTE,T_ESQUERDA};
+  int contador_encruzilhada = 0;
+  
+  
   movimento mover;
   sensores sensor;
   menu  m;
+  
+  void alinhe_no_t();
 
 public:
+
+  boolean comece();
+  
   estrategia();
   void siga_linha();
+  void procure_encruzilhada();
   
   void passe_luci(char tipo);
   void passe_t(char tipo);

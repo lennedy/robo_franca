@@ -10,18 +10,20 @@ private:
 
   //int numero_de_encruzilhadas;
   //int encruzilhada[numero_de_encruzilhadas];
+  
+  // variaveis com nome menor... guardam valores do preto -- variaveis com nome maior guardam valores do branco
+  
+  int menor_valor_mais_esquerdo = 566;
+  int maior_valor_mais_esquerdo = 32;
+  
+  int menor_valor_esquerdo = 539;
+  int maior_valor_esquerdo = 35;
 
-  int menor_valor_mais_esquerdo = 73;
-  int maior_valor_mais_esquerdo = 436;
+  int menor_valor_direito = 576;
+  int maior_valor_direito = 32;
 
-  int menor_valor_esquerdo = 68;
-  int maior_valor_esquerdo = 469;
-
-  int menor_valor_direito = 73;
-  int maior_valor_direito = 494;
-
-  int menor_valor_mais_direito = 82;
-  int maior_valor_mais_direito = 507;
+  int menor_valor_mais_direito = 506;
+  int maior_valor_mais_direito = 32;
 
 protected:
   
@@ -41,6 +43,18 @@ protected:
   int calcule_media(int valor_maior, int valor_menor);
   
 public:
+  int get_menor_valor_mais_esquerdo();
+  int get_maior_valor_mais_esquerdo();
+
+  int get_menor_valor_esquerdo();
+  int get_maior_valor_esquerdo();
+
+  int get_menor_valor_direito();
+  int get_maior_valor_direito();
+
+  int get_menor_valor_mais_direito();
+  int get_maior_valor_mais_direito();
+  
   calibracao();
   int get_encruzilhada(int posicao);
   float get_media_mais_esquerda();
@@ -53,5 +67,6 @@ public:
   void inicializar_preto_esquerdo();
   void inicializar_preto_direito();
   void inicializar_preto_mais_direito();
+  void comparar_variaveis();
 };
 #endif

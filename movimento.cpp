@@ -7,13 +7,13 @@ movimento::movimento(){
   
 
 void movimento::andar_frente(){
-  robo.acionarMotores(40,40);
+  robo.acionarMotores(50,40);
 }
 void movimento::enrolar_esquerda(){
-  robo.acionarMotores(-40,40);
+  robo.acionarMotores(-40,60);
 }
 void movimento::enrolar_direita(){
-  robo.acionarMotores(40,-40);
+  robo.acionarMotores(60,-40);
 }
 void movimento::parar(){
   robo.acionarMotores(0,0);

@@ -35,14 +35,14 @@ void robo_hardware::configurar(){
   pinMode(8, OUTPUT); 
   pinMode(9, OUTPUT);
 
-  //pinMode(BOTAO, INPUT);
+  pinMode(BOTAO, INPUT_PULLUP);
 }
 
 boolean robo_hardware::lerSensorFimDeCurso(){
   return digitalRead(BOTAO); 
 }
 
-float robo_hardware::lerSensorDeLinha(int sensor){
+int robo_hardware::lerSensorDeLinha(int sensor){
   return analogRead(sensor);
 }
 
@@ -51,7 +51,7 @@ void robo_hardware::lerXbee(){
 }
 
 void robo_hardware::acionarMotores(float motor1, float motor2){
-  motor1 = motor1*AJUSTE_MOTOR;
+  //motor1 = motor1*AJUSTE_MOTOR;
   if(motor1 < 0){
     digitalWrite(SENTIDO_ANTIHORARIO_RODA_ESQUERDA, false);
     tensao(motor1,PWM_RODA_ESQUERDA);  
@@ -85,4 +85,23 @@ boolean robo_hardware::lerTag(){
   if(leituraTag.PICC_IsNewCardPresent() && leituraTag.PICC_ReadCardSerial()){
     return true;
   }
+}
+
+void robo_hardware::mostrarSensores(){
+  Serial.print("Sensor mais esquerdo: ");
+  Serial.println(robo.lerSensorDeLinha(sensor_mais_esquerdo));
+
+  Serial.print("Sensor esquerdo: ");
+  Serial.println(robo.lerSensorDeLinha(sensor_esquerdo));
+  
+  Serial.print("Sensor direito: ");
+  Serial.println(robo.lerSensorDeLinha(sensor_direito));
+  
+  Serial.print("Sensor mais direito: ");
+  Serial.println(robo.lerSensorDeLinha(sensor_mais_direito));
+  
+  Serial.println();
+  Serial.println();
+  
+  delay(500);
 }

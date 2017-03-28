@@ -9,26 +9,18 @@
 estrategia executar;
 //Servo servo;
 
+
 void setup() {
- executar.configura();
+  executar.configura();
+  executar.comece();
+  Serial.println("COMECEI");
   //robo.configurar();
-  //Serial.begin(9600);
-//  servo.attach(10);
 }
 
 
 
 void loop(){
-  
- // servo.write(90);
-  //robo.acionarServoCacamba(100);
-  //robo.acionarServo(10);
-  //robo.acionarMotores(40,40);
   executar.run();
-  /*x = robo.lerSensorDeLinha(sensor_esquerdo);
-  Serial.println(x);
-  delay(500);
-  */
- 
-
+  //robo.acionarMotores(100,100);
+  //robo.mostrarSensores();
 }
