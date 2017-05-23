@@ -25,8 +25,8 @@ public:
   
   
   
-  #define SERVO_PALITO 12
-  #define SERVO_CACAMBA 13
+  #define SERVO_PALITO 13
+  #define SERVO_CACAMBA 12
   #define BOTAO 45
   
   #define sensor_mais_esquerdo A3

@@ -4,16 +4,20 @@
 movimento::movimento(){ 
 }
 
-  
+
 
 void movimento::andar_frente(){
-  robo.acionarMotores(50,40);
+  robo.acionarMotores(73,76);
+}
+void movimento::andar_tras(){
+  robo.acionarMotores(-52,-55);
+
 }
 void movimento::enrolar_esquerda(){
-  robo.acionarMotores(-40,60);
+  robo.acionarMotores(0,50);
 }
 void movimento::enrolar_direita(){
-  robo.acionarMotores(60,-40);
+  robo.acionarMotores(50,0);
 }
 void movimento::parar(){
   robo.acionarMotores(0,0);
@@ -46,26 +50,26 @@ void movimento::frente_encruzilhada(){
 
 
 void movimento::deitar_cacamba(){
-  robo.acionarServoCacamba(100);
-  Serial.println("Cacamba Deitada");
+  robo.acionarServoCacamba(160);
+  //Serial.println("Cacamba Deitada");
 }
 
 void movimento::levantar_cacamba(){
-  robo.acionarServoCacamba(180);
-  Serial.println("Cacamba Levantada");
+  robo.acionarServoCacamba(20);
+  //Serial.println("Cacamba Levantada");
 }
 
 void movimento::palito_frente(){
-  robo.acionarServoPalito(80);
-  Serial.println("frente");
+  robo.acionarServoPalito(100);
+  //Serial.println("frente");
 }
 
 void movimento::palito_direita(){
-  robo.acionarServoPalito(0);
-  Serial.println("direita");
+  robo.acionarServoPalito(10);
+  //Serial.println("direita");
 }
 
 void movimento::palito_esquerda(){
-  robo.acionarServoPalito(170);
-  Serial.println("esquerda");
+  robo.acionarServoPalito(180);
+  //Serial.println("esquerda");
 }

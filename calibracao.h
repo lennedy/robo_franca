@@ -13,17 +13,17 @@ private:
   
   // variaveis com nome menor... guardam valores do preto -- variaveis com nome maior guardam valores do branco
   
-  int menor_valor_mais_esquerdo = 566;
-  int maior_valor_mais_esquerdo = 32;
+  int menor_valor_mais_esquerdo = 509;
+  int maior_valor_mais_esquerdo = 31;
   
-  int menor_valor_esquerdo = 539;
-  int maior_valor_esquerdo = 35;
+  int menor_valor_esquerdo = 522;
+  int maior_valor_esquerdo = 29;
 
-  int menor_valor_direito = 576;
-  int maior_valor_direito = 32;
+  int menor_valor_direito = 505;
+  int maior_valor_direito = 30;
 
-  int menor_valor_mais_direito = 506;
-  int maior_valor_mais_direito = 32;
+  int menor_valor_mais_direito = 390;
+  int maior_valor_mais_direito = 26;
 
 protected:
   

@@ -1,3 +1,4 @@
+//codigo competiçao
 //#include <MFRC522.h>
 #include <SPI.h>
 
@@ -9,18 +10,21 @@
 estrategia executar;
 //Servo servo;
 
-
 void setup() {
   executar.configura();
   executar.comece();
-  Serial.println("COMECEI");
+  //Serial.println("COMECEI");
   //robo.configurar();
+  
 }
 
 
 
 void loop(){
+  
+  
   executar.run();
-  //robo.acionarMotores(100,100);
   //robo.mostrarSensores();
+  //robo.acionarMotores(-50,-50);
+
 }
