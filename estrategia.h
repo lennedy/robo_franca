@@ -7,17 +7,26 @@
 
 class estrategia{
 private:
-  #define LUCI_ESQUERDA 'j'
-  #define LUCI_FRENTE 'i'
-  #define LUCI_DIREITA 'l'
-  #define T_ESQUERDA 'r'
-  #define T_DIREITA 'y'
-  #define X_ESQUERDA 'z'
-  #define X_FRENTE 's'
-  #define X_DIREITA 'x'
   
-  char serial = 'b';
-  char encruzilhada[9] = {T_ESQUERDA,T_DIREITA,X_FRENTE,X_DIREITA,LUCI_FRENTE,X_DIREITA,X_FRENTE,LUCI_FRENTE,T_ESQUERDA};
+  
+  
+  #define ESQUERDA 'z'
+  #define X_FRENTE 's'
+  #define DIREITA 'x'
+  #define T_FRENTE 'd'
+  
+  
+  int soltar_bola = 14;
+  int pegar_bola = 2;
+  int palito_lado = 100;
+  int palito_frente = 100;
+  int abrir_cancela = 100;
+  int fechar_cancela = 100;
+  int giro = 14;
+  //int palito_frente = 100; 
+  
+  char serial = 'a';
+  char encruzilhada[15] = {X_FRENTE,T_FRENTE,T_FRENTE,T_FRENTE,ESQUERDA,T_FRENTE,ESQUERDA,ESQUERDA,ESQUERDA,ESQUERDA,T_FRENTE,ESQUERDA,T_FRENTE,T_FRENTE,T_FRENTE};
   int contador_encruzilhada = 0;
   
   
@@ -28,21 +37,21 @@ private:
   void alinhe_no_t();
 
 public:
-
+  //boolean especial = false;
   boolean comece();
-  
+  boolean eh_especial();
   estrategia();
   void siga_linha();
-  void procure_encruzilhada();
-  
-  void passe_luci(char tipo);
-  void passe_t(char tipo);
-  void passe_x(char tipo);
+  //boolean procure_encruzilhada();
+  void cuide_especial();
+
+  void passe_curva(char tipo);  
+  void controle_botao();
   
   void configura();
   void run(); 
-  inline void iniciar_menu(){m.executar(); sensor = m.get_sensores();}
   
+  inline void iniciar_menu(){m.executar(); sensor = m.get_sensores();}  
 };
 
 #endif

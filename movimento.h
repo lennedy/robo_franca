@@ -25,6 +25,7 @@ public:
   void deitar_cacamba();
   
   void andar_frente();
+  void andar_tras();
   void enrolar_esquerda();
   void enrolar_direita();
   void parar();
